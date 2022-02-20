@@ -1,8 +1,5 @@
 function Card(): JSX.Element {
   const someLink  = '#';
-  const ratingStyle = {
-    width: '80%',
-  };
 
   return (
     <article className="cities__place-card place-card">
@@ -29,7 +26,7 @@ function Card(): JSX.Element {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={ ratingStyle }></span>
+            <span style={{width: '80%'}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
