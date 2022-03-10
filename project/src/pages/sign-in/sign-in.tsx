@@ -1,6 +1,6 @@
-function SignIn(): JSX.Element {
+import { Link } from 'react-router-dom';
 
-  const someLink  = '#';
+function SignIn(): JSX.Element {
 
   return (
     <>
@@ -48,15 +48,14 @@ function SignIn(): JSX.Element {
           <div className="container">
             <div className="header__wrapper">
               <div className="header__left">
-                <a className="header__logo-link" href="main.html">
+                <Link to="/" className="header__logo-link">
                   <img
                     className="header__logo"
                     src="img/logo.svg"
                     alt="6 cities logo"
-                    width="81"
-                    height="41"
+                    width="81" height="41"
                   />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -99,9 +98,9 @@ function SignIn(): JSX.Element {
 
             <section className="locations locations--login locations--current">
               <div className="locations__item">
-                <a className="locations__item-link" href={someLink}>
+                <Link className="locations__item-link" to="/">
                   <span>Amsterdam</span>
-                </a>
+                </Link>
               </div>
             </section>
 
