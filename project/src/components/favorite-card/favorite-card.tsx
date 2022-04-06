@@ -1,16 +1,18 @@
 import { Link } from 'react-router-dom';
 import { Offer } from '../../types/offer';
 
-type CardProps = {
-  cardOffer: Offer;
+type FavoriteCardProps = {
+  favoriteCardOffer: Offer;
 }
 
-function Card({cardOffer}: CardProps): JSX.Element {
+function FavoriteCard({favoriteCardOffer}: FavoriteCardProps): JSX.Element {
 
-  const {previewImage, isPremium, price, title, type, isFavorite, rating, id} = cardOffer;
+  const {previewImage, isPremium, price, title, type, isFavorite, rating, id} = favoriteCardOffer;
 
   return (
-    <>
+    <article
+      className="favorites__card place-card"
+    >
       {isPremium
         ?
         <div className="place-card__mark">
@@ -19,19 +21,19 @@ function Card({cardOffer}: CardProps): JSX.Element {
         : null}
 
 
-      <div className="cities__image-wrapper place-card__image-wrapper">
+      <div className="favorites__image-wrapper place-card__image-wrapper">
         <Link to={`/offer/${id}`} title='/room'>
           <img
             className="place-card__image"
             src={previewImage}
-            width="260"
-            height="200"
+            width="150"
+            height="110"
             alt="Place pict"
           />
         </Link>
       </div>
 
-      <div className="place-card__info">
+      <div className="favorites__card-info place-card__info">
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
             <b className="place-card__price-value">&euro;{price}</b>
@@ -60,8 +62,8 @@ function Card({cardOffer}: CardProps): JSX.Element {
         <p className="place-card__type">{type}</p>
       </div>
 
-    </>
+    </article>
   );
 }
 
-export default Card;
+export default FavoriteCard;

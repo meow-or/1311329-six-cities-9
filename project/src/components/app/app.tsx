@@ -6,18 +6,26 @@ import Favorites from '../../pages/favorites/favorites';
 import Room from '../../pages/room/room';
 import NotFoundScreen from '../not-found-screen/not-found-screen';
 import PrivateRoute from '../../components/private-route/private-route';
+import { Offers } from '../../types/offer';
 
 type AppProps = {
   placesCount: number;
+  offers: Offers;
 }
 
-function App({placesCount}: AppProps): JSX.Element {
+function App({placesCount, offers}: AppProps): JSX.Element {
+
   return (
     <BrowserRouter>
       <Routes>
         <Route
           index
-          element={<Main placesCount={placesCount}/>}
+          element={
+            <Main
+              placesCount={placesCount}
+              offers={offers}
+            />
+          }
         />
         <Route
           path={AppRoute.SignIn}
@@ -29,7 +37,9 @@ function App({placesCount}: AppProps): JSX.Element {
             <PrivateRoute
               authorizationStatus={AuthorizationStatus.NoAuth}
             >
-              <Favorites/>
+              <Favorites
+                offers={offers}
+              />
             </PrivateRoute>
           }
         />
