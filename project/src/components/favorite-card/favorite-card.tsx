@@ -13,13 +13,11 @@ function FavoriteCard({favoriteCardOffer}: FavoriteCardProps): JSX.Element {
     <article
       className="favorites__card place-card"
     >
-      {isPremium
-        ?
+      {isPremium && (
         <div className="place-card__mark">
           <span>Premium</span>
         </div>
-        : null}
-
+      )}
 
       <div className="favorites__image-wrapper place-card__image-wrapper">
         <Link to={`/offer/${id}`} title='/room'>

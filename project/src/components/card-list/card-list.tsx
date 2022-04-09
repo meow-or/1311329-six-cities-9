@@ -7,7 +7,6 @@ type CardListProps = {
 }
 
 function CardList({offers}: CardListProps): JSX.Element {
-
   const [activeCard, setActiveCard] = useState(0);
 
   return (
@@ -19,10 +18,10 @@ function CardList({offers}: CardListProps): JSX.Element {
           onMouseOver={() => {
             setActiveCard(offer.id);
           }}
-          active-card={activeCard}
         >
           <Card
             cardOffer={offer}
+            activeCard={activeCard}
           />
         </article>
       ))}

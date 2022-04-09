@@ -1,8 +1,7 @@
-function SvgNamespace(): JSX.Element {
+function MainLogoSvg(): JSX.Element {
 
   return (
     <div style={{display: 'none'}}>
-
       <svg xmlns="http://www.w3.org/2000/svg">
         <symbol
           id="icon-arrow-select"
@@ -36,9 +35,8 @@ function SvgNamespace(): JSX.Element {
           </path>
         </symbol>
       </svg>
-
     </div>
   );
 }
 
-export default SvgNamespace;
+export default MainLogoSvg;

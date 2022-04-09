@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import SvgNamespace from '../../components/svg-namespace/svg-namespace';
+import MainLogoSvg from '../../components/main-logo-svg/main-logo-svg';
 import FavoriteCardContainer from '../../components/favorite-card-container/favorite-card-container';
 import { Offers } from '../../types/offer';
 
@@ -14,7 +14,7 @@ function Favorites({offers}: FavoritesProps): JSX.Element {
 
   return (
     <>
-      <SvgNamespace/>
+      <MainLogoSvg/>
 
       <div className="page">
 

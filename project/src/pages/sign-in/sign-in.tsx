@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import SvgNamespace from '../../components/svg-namespace/svg-namespace';
+import MainLogoSvg from '../../components/main-logo-svg/main-logo-svg';
 
 function SignIn(): JSX.Element {
 
   return (
     <>
-      <SvgNamespace/>
+      <MainLogoSvg/>
 
       <div className="page page--gray page--login">
 

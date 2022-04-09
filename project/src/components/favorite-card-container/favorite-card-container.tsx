@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 import { Offers } from '../../types/offer';
 import FavoriteCard from '../favorite-card/favorite-card';
 
-type FavoriteCardContainerProps = {
+type FavoriteCardsProps = {
   uniqCity: string;
   offers: Offers;
 }
 
-function FavoriteCardContainer({uniqCity, offers}: FavoriteCardContainerProps): JSX.Element {
+function FavoriteCardContainer({uniqCity, offers}: FavoriteCardsProps): JSX.Element {
 
   return (
     <li className="favorites__locations-items">

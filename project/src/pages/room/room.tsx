@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import CommentForm from '../../components/comment-form/comment-form';
 import ReviewsItem from '../../components/reviews-item/reviews-item';
-import SvgNamespace from '../../components/svg-namespace/svg-namespace';
+import MainLogoSvg from '../../components/main-logo-svg/main-logo-svg';
 
 function Room(): JSX.Element {
 
   return (
     <>
-      <SvgNamespace/>
+      <MainLogoSvg/>
 
       <div className="page">
 

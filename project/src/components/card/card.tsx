@@ -3,21 +3,20 @@ import { Offer } from '../../types/offer';
 
 type CardProps = {
   cardOffer: Offer;
+  activeCard: number;
 }
 
-function Card({cardOffer}: CardProps): JSX.Element {
+function Card({cardOffer, activeCard}: CardProps): JSX.Element {
 
   const {previewImage, isPremium, price, title, type, isFavorite, rating, id} = cardOffer;
 
   return (
     <>
-      {isPremium
-        ?
+      {isPremium && (
         <div className="place-card__mark">
           <span>Premium</span>
         </div>
-        : null}
-
+      )}
 
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={`/offer/${id}`} title='/room'>

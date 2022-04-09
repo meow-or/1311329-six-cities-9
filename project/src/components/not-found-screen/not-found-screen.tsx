@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import SvgNamespace from '../svg-namespace/svg-namespace';
+import MainLogoSvg from '../main-logo-svg/main-logo-svg';
 
 function NotFoundScreen(): JSX.Element {
 
   return (
     <>
-      <SvgNamespace/>
+      <MainLogoSvg/>
 
       <div className="page page--favorites-empty">
         <header className="header">
