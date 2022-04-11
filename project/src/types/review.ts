@@ -14,3 +14,10 @@ export type Review = {
 };
 
 export type Reviews = Review[]
+
+export type HotelReview = {
+  hotelId: number
+  hotelComments: Reviews
+}
+
+export type HotelReviews = HotelReview[]

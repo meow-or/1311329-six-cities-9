@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Offers } from '../../types/offer';
-import FavoriteCard from '../favorite-card/favorite-card';
+import Card from '../card/card';
 
 type FavoriteCardsProps = {
   uniqCity: string;
@@ -20,10 +20,32 @@ function FavoriteCardContainer({uniqCity, offers}: FavoriteCardsProps): JSX.Elem
       </div>
       <div className="favorites__places">
         {offers.filter((offer) => offer.isFavorite).filter((offer) => offer.city.name === uniqCity).map((offer) => (
-          <FavoriteCard
+          <article
             key={offer.id}
-            favoriteCardOffer={offer}
-          />
+            className="favorites__card place-card"
+          >
+            {offer.isPremium && (
+              <div className="place-card__mark">
+                <span>Premium</span>
+              </div>
+            )}
+
+            <div className="favorites__image-wrapper place-card__image-wrapper">
+              <Link to={`/offer/${offer.id}`} title='/room'>
+                <img
+                  className="place-card__image"
+                  src={offer.previewImage}
+                  width="150"
+                  height="110"
+                  alt="Place pict"
+                />
+              </Link>
+            </div>
+            <Card
+              cardOffer={offer}
+              activeCard={0}
+            />
+          </article>
         ))}
       </div>
     </li>

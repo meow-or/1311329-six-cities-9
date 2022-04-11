@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Card from '../card/card';
 import { Offers } from '../../types/offer';
 import { useState } from 'react';
@@ -19,6 +20,23 @@ function CardList({offers}: CardListProps): JSX.Element {
             setActiveCard(offer.id);
           }}
         >
+          {offer.isPremium && (
+            <div className="place-card__mark">
+              <span>Premium</span>
+            </div>
+          )}
+
+          <div className="cities__image-wrapper place-card__image-wrapper">
+            <Link to={`/offer/${offer.id}`} title='/room'>
+              <img
+                className="place-card__image"
+                src={offer.previewImage}
+                width="260"
+                height="200"
+                alt="Place pict"
+              />
+            </Link>
+          </div>
           <Card
             cardOffer={offer}
             activeCard={activeCard}
